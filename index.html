@@ -27,7 +27,8 @@
                         'accent-orange': '#FF6B00',
                         'jet-black': '#1A1A1A',
                         'charcoal': '#2D2D2D',
-                        'blue-sky': '#87CEEB'
+                        'blue-sky': '#87CEEB',
+                        'sky-mid': '#5BA3C6'
                     },
                     fontFamily: {
                         'slab': ['Roboto Slab', 'Georgia', 'serif'],
@@ -284,7 +285,7 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="relative">
                     <div class="bg-gradient-to-br from-pine-light to-pine rounded-3xl p-6">
-                        <div class="bg-gradient-to-b from-blue-sky via-[#5BA3C6] to-jet-black rounded-2xl min-h-[350px] flex flex-col items-center justify-center text-white text-center p-8">
+                        <div class="bg-gradient-to-b from-blue-sky via-sky-mid to-jet-black rounded-2xl min-h-[350px] flex flex-col items-center justify-center text-white text-center p-8">
                             <div class="text-6xl mb-4">👷</div>
                             <p class="font-bold text-xl">Cedrick Thomas</p>
                             <p class="text-sm uppercase tracking-wider opacity-80 mt-2">Founder & CEO</p>
@@ -601,6 +602,7 @@
 
             // Board feet per acre estimates by species and age
             // Source: USDA Forest Service regional averages for mature managed stands
+            // ageMultiplier: Premium factor for species with slower growth but higher value at maturity
             const bfPerAcre = {
                 'pine': { base: 8000, ageMultiplier: 1.0 },      // Fast growth softwood
                 'oak': { base: 6000, ageMultiplier: 1.2 },       // Premium hardwood
@@ -609,7 +611,9 @@
                 'walnut': { base: 4000, ageMultiplier: 1.5 }     // Premium value
             };
 
-            // Price per board foot by species (USD) - 2024 regional timber price reports
+            // Price per board foot by species (USD)
+            // Source: 2024 regional timber price reports, stumpage rates
+            // Note: Prices are approximate and vary by region, quality, and market conditions
             const pricePerBF = {
                 'pine': 0.35,     // Commodity softwood
                 'oak': 0.55,      // Red/white oak average
