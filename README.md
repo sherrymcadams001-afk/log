@@ -1,6 +1,25 @@
-# Cedrick Logging - Tech-Stewardship Web Portfolio
+# Cedrick Logging - International Forestry Enterprise
 
-A modern web portfolio for **Cedrick Logging** (Owner: Cedrick Thomas), merging Corporate ESG authority with Modern Mass-Timber aesthetics following the "Tech-Timber" design paradigm.
+A premium enterprise web portfolio for **Cedrick Logging** (CEO: Cedrick Thomas), an international forestry leader with operations across North America and accomplished contracts worldwide.
+
+## Company Information
+
+### Headquarters
+**La Cholla Corporate Center**  
+📍 6261 N La Cholla Blvd, Tucson, AZ 85741
+
+### Colorado Branch
+📍 5404 Ward Ave, Arvada, CO 80002
+
+### Contact
+📞 +1 (520) 427-9815  
+✉️ info@cedricklogging.com
+
+## Technology Stack
+
+- **Tailwind CSS** - Enterprise-grade utility-first CSS framework
+- **Google Fonts** - Inter (body) + Roboto Slab (headers)
+- **Vanilla JavaScript** - Interactive calculators and forms
 
 ## Design Philosophy
 
@@ -51,6 +70,39 @@ This portfolio implements a "Tech-Stewardship" approach that combines:
 - Inputs: Acres, Species, Stand Age, Road Access
 - Outputs: Board Feet, Timber Value Range, Carbon Credits, Total Value
 
+### F. Contact Section
+- Headquarters (Tucson, AZ) and Colorado Branch (Arvada, CO) locations
+- Direct phone: +1 (520) 427-9815
+- International reach banner showcasing global presence
+
+## Image/Video Prompts
+
+### Hero Video
+```
+Cinematic 4K drone footage flying smoothly over a vast forest canopy at golden hour. 
+Camera starts high showing endless treetops stretching to the horizon under a brilliant blue sky.
+Slowly descends through the canopy layer, revealing the scale and density of mature timber. 
+Sun rays filter through the trees creating dramatic light shafts.
+Duration: 30-60 seconds, seamless loop.
+```
+
+### Cedrick Thomas Portrait
+```
+Professional corporate portrait of a confident male forester/CEO in his 50s.
+Setting: Modern office with large windows overlooking a forest landscape.
+Attire: High-visibility safety vest over a crisp button-down shirt, hard hat in one hand, 
+tablet showing forest mapping data in the other hand.
+Style: Corporate editorial photography, magazine cover quality.
+```
+
+### GIS Mapping Visualization
+```
+High-tech 3D visualization of forest terrain data on a large monitor.
+Show colorful topographic layers with tree canopy height data in green gradients,
+terrain elevation in blue/brown gradients, and harvest route overlays in orange/yellow.
+Include data panels showing statistics: tree count, board feet estimates, carbon values.
+```
+
 ## Features
 
 ### Visual Design
@@ -59,52 +111,32 @@ This portfolio implements a "Tech-Stewardship" approach that combines:
 - Blue Sky imagery throughout
 - No rustic or muddy greens - clean, modern aesthetic
 - Responsive design for all devices
+- Built with Tailwind CSS for enterprise scalability
 
-### UX Features
-- **Immediate Split-Path Navigation**: Clear paths for Landowners vs Lumber Buyers
-- Horizontal scroll lifecycle section
-- Smooth scroll navigation
-- Interactive elements with hover states
-
-### Technical Features
-- **GIS/LiDAR Mapping Section**: Showcases precision forest mapping capabilities
+### Interactive Tools
 - **Carbon Calculator**: Interactive tool to estimate carbon sequestration value
 - **Harvest Estimator**: Preliminary timber value calculator for landowners
-- **Drone Video Background**: Hero section designed for video integration
-- **Trust Indicators**: Key statistics and certifications
 
 ### Mass Timber / CLT Ready
 - References to Cross-Laminated Timber (CLT) throughout
 - Mass Timber product integration in lifecycle
 - Future-ready positioning for modern construction markets
 
-## File Structure
+## International Reach
 
-```
-/
-├── index.html      # Main portfolio page (single-page application)
-└── README.md       # Project documentation
-```
-
-## Usage
-
-Simply open `index.html` in a web browser to view the portfolio.
-
-## Conversion Logic
-
-The portfolio implements strategic conversion paths:
-
-1. **Landowner Path**: Assessment → GIS Mapping → Carbon Credits → Consultation with Cedrick
-2. **Buyer Path**: Inventory → Mass Timber/CLT → Certification Docs → Consultation with Cedrick
-
-Both paths converge at direct consultation with Cedrick Thomas, maximizing lead generation.
+Cedrick Logging has accomplished contracts across:
+- 🇺🇸 United States
+- 🇨🇦 Canada
+- 🇩🇪 Germany
+- 🇦🇺 Australia
+- 🇯🇵 Japan
 
 ## Certifications Displayed
 - SFI (Sustainable Forestry Initiative) Certified
 - PEFC (Programme for the Endorsement of Forest Certification) Endorsed  
 - FSC (Forest Stewardship Council) Chain of Custody
 
-## Owner
+## CEO
 
 **Cedrick Thomas** - Cedrick Logging  
 *"From Seedling to Solution. The Cedrick Thomas Standard."*
