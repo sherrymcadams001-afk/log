@@ -40,11 +40,16 @@
     </script>
     <style>
         /* Custom styles that complement Tailwind */
+        :root {
+            --color-blue-sky: #87CEEB;
+            --color-sky-mid: #5BA3C6;
+            --color-jet-black: #1A1A1A;
+        }
         html { scroll-behavior: smooth; }
         
         /* Hero video background */
         .hero-gradient {
-            background: linear-gradient(180deg, #87CEEB 0%, #5BA3C6 40%, #1A1A1A 100%);
+            background: linear-gradient(180deg, var(--color-blue-sky) 0%, var(--color-sky-mid) 40%, var(--color-jet-black) 100%);
         }
         
         /* Lifecycle horizontal scroll */
@@ -131,7 +136,7 @@
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient" id="home">
         <div class="absolute inset-0 z-0">
             <!-- Video placeholder with gradient background simulating drone footage over forest canopy with blue sky -->
-            <div class="w-full h-full bg-gradient-to-b from-blue-sky via-[#5BA3C6] to-jet-black opacity-70"></div>
+            <div class="w-full h-full bg-gradient-to-b from-blue-sky via-sky-mid to-jet-black opacity-70"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-blue-sky/30 via-jet-black/40 to-jet-black/85"></div>
         </div>
         <div class="relative z-10 text-center text-white max-w-4xl px-6 py-8">
