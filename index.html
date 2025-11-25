@@ -1130,7 +1130,7 @@
                     </div>
                     <div class="form-group">
                         <label for="forest-type">Primary Forest Type</label>
-                        <select id="forest-type">
+                        <select id="forest-type" required>
                             <option value="">Select forest type</option>
                             <option value="pine">Pine/Softwood</option>
                             <option value="hardwood">Hardwood/Mixed</option>
@@ -1142,7 +1142,7 @@
                         <label for="forest-age">Average Stand Age (years)</label>
                         <input type="number" id="forest-age" placeholder="Enter average age" min="1" required>
                     </div>
-                    <button class="calculate-btn" onclick="calculateCarbon()">Calculate Carbon Value</button>
+                    <button class="calculate-btn" id="calculateBtn" type="button">Calculate Carbon Value</button>
                     <div class="calculator-result" id="carbon-result">
                         <div class="result-number" id="result-value">0</div>
                         <div class="result-label">Estimated Annual CO₂ Sequestration (tons)</div>
@@ -1376,6 +1376,9 @@
                 mobileMenuBtn.setAttribute('aria-expanded', 'false');
             });
         });
+
+        // Carbon Calculator button event listener
+        document.getElementById('calculateBtn').addEventListener('click', calculateCarbon);
     </script>
 </body>
 </html>
