@@ -278,53 +278,6 @@
         </div>
     </section>
 
-    <!-- Technology Preview Section - Links to dedicated pages -->
-    <section class="py-16 bg-gray-50" id="technology-preview">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold font-slab mb-4">Advanced Forestry Technology</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Precision technology meets environmental stewardship. Explore our comprehensive suite of forestry services.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- GIS/LiDAR Card -->
-                <a href="gis-lidar.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-jet-black to-charcoal flex items-center justify-center">
-                        <div class="text-6xl">🛰️</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold font-slab mb-2 group-hover:text-accent-orange transition-colors">GIS/LiDAR Mapping</h3>
-                        <p class="text-gray-600 text-sm mb-4">Drone-mounted LiDAR systems capturing millions of data points per acre for detailed 3D forest models.</p>
-                        <span class="text-accent-orange font-semibold inline-flex items-center gap-2">Learn More <span>→</span></span>
-                    </div>
-                </a>
-                
-                <!-- Carbon Credits Card -->
-                <a href="carbon-credits.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-pine to-pine-dark flex items-center justify-center">
-                        <div class="text-6xl">🌱</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold font-slab mb-2 group-hover:text-accent-orange transition-colors">Carbon Credit Programs</h3>
-                        <p class="text-gray-600 text-sm mb-4">Monetize your forest's carbon sequestration potential with verified carbon credit programs.</p>
-                        <span class="text-accent-orange font-semibold inline-flex items-center gap-2">Calculate Value <span>→</span></span>
-                    </div>
-                </a>
-                
-                <!-- Sustainability Card -->
-                <a href="sustainability.html" class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 border border-gray-100">
-                    <div class="h-48 bg-gradient-to-br from-blue-sky to-[#5BA3C6] flex items-center justify-center">
-                        <div class="text-6xl">🌲</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold font-slab mb-2 group-hover:text-accent-orange transition-colors">Sustainable Forestry</h3>
-                        <p class="text-gray-600 text-sm mb-4">Stewards first, loggers second. Our 3-for-1 reforestation program and certified practices.</p>
-                        <span class="text-accent-orange font-semibold inline-flex items-center gap-2">Our Methods <span>→</span></span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- About Preview Section - Links to About page -->
     <section class="py-16 bg-white" id="about">
         <div class="max-w-7xl mx-auto px-6">
@@ -649,28 +602,28 @@
             // Board feet per acre estimates by species and age
             // Source: USDA Forest Service regional averages for mature managed stands
             const bfPerAcre = {
-                'pine': { base: 8000, ageMultiplier: 1.0 },
-                'oak': { base: 6000, ageMultiplier: 1.2 },
-                'maple': { base: 5500, ageMultiplier: 1.1 },
-                'mixed': { base: 6500, ageMultiplier: 1.05 },
-                'walnut': { base: 4000, ageMultiplier: 1.5 }
+                'pine': { base: 8000, ageMultiplier: 1.0 },      // Fast growth softwood
+                'oak': { base: 6000, ageMultiplier: 1.2 },       // Premium hardwood
+                'maple': { base: 5500, ageMultiplier: 1.1 },     // Veneer quality
+                'mixed': { base: 6500, ageMultiplier: 1.05 },    // Hardwood mix
+                'walnut': { base: 4000, ageMultiplier: 1.5 }     // Premium value
             };
 
-            // Price per board foot by species (USD)
+            // Price per board foot by species (USD) - 2024 regional timber price reports
             const pricePerBF = {
-                'pine': 0.35,
-                'oak': 0.55,
-                'maple': 0.50,
-                'mixed': 0.45,
-                'walnut': 1.25
+                'pine': 0.35,     // Commodity softwood
+                'oak': 0.55,      // Red/white oak average
+                'maple': 0.50,    // Hard maple
+                'mixed': 0.45,    // Blended rate
+                'walnut': 1.25    // Premium furniture-grade
             };
 
-            // Access discount factors
+            // Access discount factors - reflects logging cost differentials
             const accessFactors = {
-                'excellent': 1.0,
-                'good': 0.95,
-                'moderate': 0.85,
-                'limited': 0.70
+                'excellent': 1.0,   // Paved road access
+                'good': 0.95,       // Gravel roads
+                'moderate': 0.85,   // Seasonal access
+                'limited': 0.70     // Trail only
             };
 
             // Age factor (optimal harvest at 40-60 years for most species)
