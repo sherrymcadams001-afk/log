@@ -608,6 +608,19 @@
             border-color: var(--pine);
         }
 
+        .form-group input.error,
+        .form-group select.error {
+            border-color: #dc3545;
+        }
+
+        .error-message {
+            display: block;
+            color: #dc3545;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            min-height: 1.25rem;
+        }
+
         .calculate-btn {
             width: 100%;
             background: var(--black);
@@ -1122,27 +1135,30 @@
     <section class="carbon-calculator section" id="carbon">
         <div class="container">
             <div class="calculator-grid">
-                <div class="calculator-form">
+                <form class="calculator-form" id="carbonForm" novalidate>
                     <h3 style="margin-bottom: 1.5rem;">Carbon Sequestration Calculator</h3>
                     <div class="form-group">
                         <label for="acres">Total Forest Acres</label>
-                        <input type="number" id="acres" placeholder="Enter acreage" min="1" required>
+                        <input type="number" id="acres" placeholder="Enter acreage" min="1" required aria-describedby="acres-error">
+                        <span id="acres-error" class="error-message" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
                         <label for="forest-type">Primary Forest Type</label>
-                        <select id="forest-type" required>
+                        <select id="forest-type" required aria-describedby="forest-type-error">
                             <option value="">Select forest type</option>
                             <option value="pine">Pine/Softwood</option>
                             <option value="hardwood">Hardwood/Mixed</option>
                             <option value="oak">Oak Dominant</option>
                             <option value="maple">Maple/Birch</option>
                         </select>
+                        <span id="forest-type-error" class="error-message" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
                         <label for="forest-age">Average Stand Age (years)</label>
-                        <input type="number" id="forest-age" placeholder="Enter average age" min="1" required>
+                        <input type="number" id="forest-age" placeholder="Enter average age" min="1" required aria-describedby="forest-age-error">
+                        <span id="forest-age-error" class="error-message" role="alert" aria-live="polite"></span>
                     </div>
-                    <button class="calculate-btn" id="calculateBtn" type="button">Calculate Carbon Value</button>
+                    <button class="calculate-btn" id="calculateBtn" type="submit">Calculate Carbon Value</button>
                     <div class="calculator-result" id="carbon-result">
                         <div class="result-number" id="result-value">0</div>
                         <div class="result-label">Estimated Annual CO₂ Sequestration (tons)</div>
@@ -1150,7 +1166,7 @@
                             Potential carbon credit value: $<span id="credit-value">0</span>/year
                         </p>
                     </div>
-                </div>
+                </form>
                 <div class="calculator-info">
                     <h2>Unlock Your Forest's Carbon Potential</h2>
                     <p>Forests are one of Earth's most effective carbon sinks. Our carbon credit programs help you monetize this natural benefit while contributing to global climate goals.</p>
@@ -1291,15 +1307,45 @@
 
     <!-- JavaScript for Carbon Calculator -->
     <script>
-        function calculateCarbon() {
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+        }
+
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            const errorSpan = document.getElementById(fieldId + '-error');
+            if (field) field.classList.add('error');
+            if (errorSpan) errorSpan.textContent = message;
+        }
+
+        function calculateCarbon(event) {
+            if (event) event.preventDefault();
+            
+            clearErrors();
+            
             const acres = parseFloat(document.getElementById('acres').value) || 0;
             const forestType = document.getElementById('forest-type').value;
             const forestAge = parseFloat(document.getElementById('forest-age').value) || 0;
 
-            if (acres <= 0 || !forestType || forestAge <= 0) {
-                alert('Please fill in all fields with valid values.');
-                return;
+            let hasErrors = false;
+
+            if (acres <= 0) {
+                showError('acres', 'Please enter a valid number of acres.');
+                hasErrors = true;
             }
+            
+            if (!forestType) {
+                showError('forest-type', 'Please select a forest type.');
+                hasErrors = true;
+            }
+            
+            if (forestAge <= 0) {
+                showError('forest-age', 'Please enter a valid stand age.');
+                hasErrors = true;
+            }
+
+            if (hasErrors) return;
 
             // Carbon sequestration rates (tons CO2 per acre per year) based on forest type
             const sequestrationRates = {
@@ -1377,8 +1423,8 @@
             });
         });
 
-        // Carbon Calculator button event listener
-        document.getElementById('calculateBtn').addEventListener('click', calculateCarbon);
+        // Carbon Calculator form submission handler
+        document.getElementById('carbonForm').addEventListener('submit', calculateCarbon);
     </script>
 </body>
 </html>
