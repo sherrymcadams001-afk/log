@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cedrick Logging | Tech-Stewardship in Sustainable Forestry</title>
-    <meta name="description" content="Cedrick Logging combines advanced technology with sustainable forestry practices. GIS/LiDAR mapping, carbon calculators, and premium timber services for landowners and buyers.">
+    <title>Cedrick Logging | From Seedling to Solution - The Cedrick Thomas Standard</title>
+    <meta name="description" content="Cedrick Logging combines advanced technology with sustainable forestry practices. GIS/LiDAR mapping, carbon calculators, Mass Timber/CLT solutions, and premium timber services for landowners and lumber buyers.">
+    <!-- Google Fonts: Inter for data density, Rockwell-like slab serif for headlines -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
         /* ===== CSS RESET & BASE ===== */
         *, *::before, *::after {
@@ -21,9 +25,12 @@
             --pine: #C4956A;
             --pine-dark: #8B6914;
             --charcoal: #2D2D2D;
-            --black: #1A1A1A;
-            --accent-gold: #B8860B;
-            --text-primary: #1A1A1A;
+            --black: #000000;
+            --jet-black: #1A1A1A;
+            --accent-orange: #FF6B00;
+            --accent-yellow: #FFD100;
+            --blue-sky: #87CEEB;
+            --text-primary: #000000;
             --text-secondary: #4A4A4A;
             --text-light: #FFFFFF;
         }
@@ -33,7 +40,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-primary);
             background-color: var(--white);
@@ -41,8 +48,10 @@
 
         /* ===== TYPOGRAPHY ===== */
         h1, h2, h3, h4 {
-            font-weight: 600;
+            font-family: 'Roboto Slab', 'Rockwell', Georgia, serif;
+            font-weight: 700;
             line-height: 1.2;
+            color: var(--black);
         }
 
         h1 { font-size: 3rem; }
@@ -134,15 +143,16 @@
         }
 
         .nav-cta {
-            background: var(--black);
+            background: var(--accent-orange);
             color: var(--white) !important;
             padding: 0.75rem 1.5rem;
             border-radius: 6px;
             transition: background 0.3s ease !important;
+            font-weight: 600;
         }
 
         .nav-cta:hover {
-            background: var(--charcoal) !important;
+            background: #E55A00 !important;
         }
 
         /* ===== MOBILE MENU ===== */
@@ -229,7 +239,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: var(--black);
+            background: linear-gradient(180deg, var(--blue-sky) 0%, #5BA3C6 40%, var(--jet-black) 100%);
         }
 
         .hero-video-container {
@@ -245,7 +255,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
         .hero-overlay {
@@ -256,9 +266,9 @@
             height: 100%;
             background: linear-gradient(
                 180deg,
-                rgba(26, 26, 26, 0.7) 0%,
-                rgba(26, 26, 26, 0.5) 50%,
-                rgba(26, 26, 26, 0.8) 100%
+                rgba(135, 206, 235, 0.3) 0%,
+                rgba(26, 26, 26, 0.4) 50%,
+                rgba(26, 26, 26, 0.85) 100%
             );
             z-index: 2;
         }
@@ -352,8 +362,8 @@
 
         .path-btn {
             display: inline-block;
-            background: var(--white);
-            color: var(--black);
+            background: var(--accent-orange);
+            color: var(--white);
             padding: 0.875rem 2rem;
             border-radius: 8px;
             text-decoration: none;
@@ -362,8 +372,9 @@
         }
 
         .path-btn:hover {
-            background: var(--pine-light);
-            color: var(--black);
+            background: #E55A00;
+            color: var(--white);
+            transform: translateY(-2px);
         }
 
         /* ===== ESG/TRUST INDICATORS ===== */
@@ -396,6 +407,129 @@
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* ===== PROCESS SECTION - LIFECYCLE VISUAL FLOW ===== */
+        .process-section {
+            background: var(--jet-black);
+            padding: 5rem 0;
+            overflow: hidden;
+        }
+
+        .process-section .section-header h2 {
+            color: var(--white);
+        }
+
+        .process-section .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .lifecycle-scroll {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            padding: 2rem 0;
+            gap: 0;
+        }
+
+        .lifecycle-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .lifecycle-stage {
+            flex: 0 0 280px;
+            scroll-snap-align: center;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--jet-black) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            margin-right: 1rem;
+        }
+
+        .lifecycle-stage:first-child {
+            margin-left: 2rem;
+        }
+
+        .lifecycle-stage:last-child {
+            margin-right: 2rem;
+        }
+
+        .lifecycle-stage::after {
+            content: "→";
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-orange);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .lifecycle-stage:last-child::after {
+            display: none;
+        }
+
+        .stage-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--pine-light) 0%, var(--pine) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .stage-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-orange);
+            color: var(--white);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .lifecycle-stage h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .lifecycle-stage p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: rgba(255, 107, 0, 0.2);
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        .scroll-hint {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+            margin-top: 1rem;
         }
 
         /* ===== SERVICES SECTION ===== */
@@ -758,6 +892,263 @@
             color: var(--text-secondary);
         }
 
+        /* ===== THE CEDRICK FACTOR (ABOUT/TRUST) SECTION ===== */
+        .cedrick-factor {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cedrick-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .cedrick-portrait {
+            position: relative;
+        }
+
+        .portrait-frame {
+            background: linear-gradient(135deg, var(--pine-light) 0%, var(--pine) 100%);
+            border-radius: 20px;
+            padding: 1.5rem;
+            position: relative;
+        }
+
+        .portrait-placeholder {
+            background: linear-gradient(180deg, var(--blue-sky) 0%, #5BA3C6 50%, var(--jet-black) 100%);
+            border-radius: 12px;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .portrait-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .portrait-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .portrait-tech-badge {
+            position: absolute;
+            bottom: -1rem;
+            right: -1rem;
+            background: var(--jet-black);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .portrait-tech-badge span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cedrick-content h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .cedrick-content .tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .cedrick-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .cedrick-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: var(--off-white);
+            border-radius: 12px;
+            padding: 1.25rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .value-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--pine-light) 0%, var(--pine) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.25rem;
+        }
+
+        .value-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .value-text p {
+            font-size: 0.875rem;
+            margin-bottom: 0;
+        }
+
+        /* ===== STEWARDSHIP HUB SECTION ===== */
+        .stewardship-hub {
+            background: linear-gradient(180deg, var(--blue-sky) 0%, var(--off-white) 100%);
+            position: relative;
+        }
+
+        .stewardship-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .stewardship-narrative {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--jet-black);
+            font-weight: 500;
+            border-left: 4px solid var(--accent-orange);
+            padding-left: 2rem;
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .carbon-widget {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .carbon-widget h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .carbon-metric {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--pine-dark);
+            font-family: 'Roboto Slab', Georgia, serif;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== HARVEST ESTIMATOR TOOL ===== */
+        .harvest-estimator {
+            background: var(--off-white);
+        }
+
+        .estimator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .estimator-form {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .estimator-result {
+            background: linear-gradient(135deg, var(--jet-black) 0%, var(--charcoal) 100%);
+            border-radius: 16px;
+            padding: 2.5rem;
+            color: var(--white);
+        }
+
+        .result-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .result-header h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
+        .estimate-breakdown {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+        }
+
+        .estimate-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .estimate-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--accent-orange);
+        }
+
+        .estimate-label {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .estimate-value {
+            color: var(--white);
+            font-weight: 600;
+        }
+
         /* ===== CTA SECTION ===== */
         .cta-section {
             background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
@@ -786,19 +1177,19 @@
         }
 
         .btn-primary {
-            background: var(--pine);
+            background: var(--accent-orange);
             color: var(--white);
             padding: 1rem 2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid var(--pine);
+            border: 2px solid var(--accent-orange);
         }
 
         .btn-primary:hover {
-            background: var(--pine-dark);
-            border-color: var(--pine-dark);
+            background: #E55A00;
+            border-color: #E55A00;
         }
 
         .btn-secondary {
@@ -892,12 +1283,18 @@
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 1024px) {
             .mapping-grid,
-            .calculator-grid {
+            .calculator-grid,
+            .cedrick-grid,
+            .estimator-grid {
                 grid-template-columns: 1fr;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+
+            .cedrick-values {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -934,6 +1331,15 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .carbon-metric {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .stewardship-narrative {
+                font-size: 1.25rem;
+            }
         }
 
         /* ===== ANIMATIONS ===== */
@@ -966,15 +1372,15 @@
                 <div class="logo-icon">CL</div>
                 <div>
                     <div class="logo-text">Cedrick Logging</div>
-                    <div class="logo-tagline">Tech-Stewardship Forestry</div>
+                    <div class="logo-tagline">The Cedrick Thomas Standard</div>
                 </div>
             </a>
             <ul class="nav-links">
+                <li><a href="#process">Process</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#mapping">GIS Mapping</a></li>
-                <li><a href="#carbon">Carbon Calculator</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+                <li><a href="#about">About Cedrick</a></li>
+                <li><a href="#harvest-estimator">Estimate Value</a></li>
+                <li><a href="#contact" class="nav-cta">Contact Cedrick</a></li>
             </ul>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu" aria-expanded="false">
                 <span></span>
@@ -987,42 +1393,42 @@
     <!-- Mobile Navigation -->
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
         <ul>
+            <li><a href="#process" class="mobile-nav-link">Process</a></li>
             <li><a href="#services" class="mobile-nav-link">Services</a></li>
-            <li><a href="#mapping" class="mobile-nav-link">GIS Mapping</a></li>
-            <li><a href="#carbon" class="mobile-nav-link">Carbon Calculator</a></li>
-            <li><a href="#testimonials" class="mobile-nav-link">Testimonials</a></li>
-            <li><a href="#contact" class="mobile-nav-link">Contact Us</a></li>
+            <li><a href="#about" class="mobile-nav-link">About Cedrick</a></li>
+            <li><a href="#harvest-estimator" class="mobile-nav-link">Estimate Value</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact Cedrick</a></li>
         </ul>
     </nav>
 
     <!-- Hero Section with Drone Video Background -->
     <section class="hero" id="home">
         <div class="hero-video-container">
-            <!-- Placeholder for drone video - would be replaced with actual video -->
-            <div class="hero-video" style="background: linear-gradient(135deg, #2D2D2D 0%, #1A1A1A 100%);"></div>
+            <!-- Full-width drone video flying over canopy layers - Blue Sky Background -->
+            <div class="hero-video" style="background: linear-gradient(180deg, #87CEEB 0%, #5BA3C6 40%, #2D4A3E 70%, #1A1A1A 100%);"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
             <span class="hero-badge animate-fadeInUp">🌲 ESG Certified Forestry Partner</span>
-            <h1 class="animate-fadeInUp delay-1">Technology Meets<br>Sustainable Timber</h1>
+            <h1 class="animate-fadeInUp delay-1">From Seedling to Solution.</h1>
             <p class="hero-subtitle animate-fadeInUp delay-2">
-                Combining precision LiDAR mapping, carbon sequestration analytics, and 
-                sustainable harvesting practices. Partner with us for responsible forestry 
-                that protects your investment and our planet.
+                <strong>The Cedrick Thomas Standard.</strong><br>
+                Precision LiDAR mapping. Carbon sequestration analytics. Mass Timber solutions.<br>
+                Partner with us for responsible forestry that protects your investment and our planet.
             </p>
             
-            <!-- Split-Path Navigation -->
+            <!-- Split-Path Navigation: Immediate Entry Points -->
             <div class="path-selection animate-fadeInUp delay-3">
                 <div class="path-card" id="landowner-path">
                     <div class="path-icon">🏔️</div>
-                    <h3>I'm a Landowner</h3>
-                    <p>Maximize your timber value while maintaining forest health with our comprehensive land management services.</p>
-                    <a href="#services" class="path-btn">Explore Options</a>
+                    <h3>I Own Land</h3>
+                    <p>Maximize your timber value through precision forestry, carbon credits, and sustainable stewardship practices.</p>
+                    <a href="#harvest-estimator" class="path-btn">Get My Assessment</a>
                 </div>
                 <div class="path-card" id="buyer-path">
                     <div class="path-icon">🪵</div>
-                    <h3>I'm a Buyer</h3>
-                    <p>Source premium, sustainably harvested timber with full chain-of-custody documentation and carbon tracking.</p>
+                    <h3>I Buy Lumber</h3>
+                    <p>Source premium Mass Timber and CLT products with full chain-of-custody documentation and carbon tracking.</p>
                     <a href="#services" class="path-btn">View Inventory</a>
                 </div>
             </div>
@@ -1051,6 +1457,52 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- PROCESS SECTION: Lifecycle Visual Flow (Horizontal Scroll) -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Vertical Integration: Seedling to Solution</h2>
+                <p>Our precision forestry lifecycle ensures maximum value at every stage</p>
+            </div>
+        </div>
+        <div class="lifecycle-scroll">
+            <div class="lifecycle-stage">
+                <span class="stage-number">1</span>
+                <div class="stage-icon">🌱</div>
+                <h3>Seedling</h3>
+                <p>Carefully selected, climate-adapted seedlings planted for optimal growth and carbon capture potential.</p>
+            </div>
+            <div class="lifecycle-stage">
+                <span class="stage-number">2</span>
+                <div class="stage-icon">🛰️</div>
+                <h3>Precision Forestry</h3>
+                <p>Advanced GIS mapping and drone surveys create detailed 3D forest inventories.</p>
+                <span class="tech-badge">LiDAR + GIS</span>
+            </div>
+            <div class="lifecycle-stage">
+                <span class="stage-number">3</span>
+                <div class="stage-icon">🌲</div>
+                <h3>Sustainable Harvest</h3>
+                <p>Low-impact harvesting techniques preserve forest health while maximizing timber yield.</p>
+                <span class="tech-badge">Drone Planning</span>
+            </div>
+            <div class="lifecycle-stage">
+                <span class="stage-number">4</span>
+                <div class="stage-icon">🏭</div>
+                <h3>Sawmill Processing</h3>
+                <p>State-of-the-art milling with full chain-of-custody tracking and quality grading.</p>
+            </div>
+            <div class="lifecycle-stage">
+                <span class="stage-number">5</span>
+                <div class="stage-icon">🏗️</div>
+                <h3>Mass Timber Product</h3>
+                <p>Premium CLT (Cross-Laminated Timber) and engineered wood products for modern construction.</p>
+                <span class="tech-badge">CLT Ready</span>
+            </div>
+        </div>
+        <p class="scroll-hint">← Scroll to explore the lifecycle →</p>
     </section>
 
     <!-- Services Section -->
@@ -1092,10 +1544,10 @@
                     <a href="#" class="service-link">Certification Info →</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🤝</div>
-                    <h3>Consulting Services</h3>
-                    <p>Expert guidance on forest management plans, regulatory compliance, succession planning, and maximizing long-term forest value.</p>
-                    <a href="#" class="service-link">Book Consultation →</a>
+                    <div class="service-icon">🏗️</div>
+                    <h3>Mass Timber & CLT</h3>
+                    <p>Premium Cross-Laminated Timber (CLT) and engineered wood products for modern sustainable construction projects.</p>
+                    <a href="#" class="service-link">View Products →</a>
                 </div>
             </div>
         </div>
@@ -1198,6 +1650,165 @@
         </div>
     </section>
 
+    <!-- Stewardship Hub Section -->
+    <section class="stewardship-hub section" id="stewardship">
+        <div class="container">
+            <div class="stewardship-content">
+                <h2>The Stewardship Hub</h2>
+                <p class="stewardship-narrative">"We are Stewards first, Loggers second. Every tree we harvest is a promise to plant three more. Every forest we manage is a legacy we protect for the next generation."</p>
+            </div>
+            <div class="carbon-widget">
+                <h3>Live Carbon Calculator</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Real-time CO₂ sequestration metrics per board foot</p>
+                <div class="carbon-metric">
+                    <div class="metric-item">
+                        <div class="metric-value">1.2</div>
+                        <div class="metric-label">Tons CO₂ / Board Foot</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">$24</div>
+                        <div class="metric-label">Carbon Value / BF</div>
+                    </div>
+                    <div class="metric-item">
+                        <div class="metric-value">45K</div>
+                        <div class="metric-label">Total Offset (Tons)</div>
+                    </div>
+                </div>
+                <a href="#carbon" class="btn-primary" style="margin-top: 1.5rem;">Calculate Your Forest's Value</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Cedrick Factor (About/Trust) Section -->
+    <section class="cedrick-factor section" id="about">
+        <div class="container">
+            <div class="cedrick-grid">
+                <div class="cedrick-portrait">
+                    <div class="portrait-frame">
+                        <div class="portrait-placeholder">
+                            <div class="portrait-icon">👷</div>
+                            <p><strong>Cedrick Thomas</strong></p>
+                            <p class="portrait-label">Founder & Chief Forester</p>
+                            <p style="font-size: 0.875rem; margin-top: 1rem; opacity: 0.9;">High-tech safety gear, tablet in hand—<br>the modern face of precision forestry</p>
+                        </div>
+                        <div class="portrait-tech-badge">
+                            <span>Since 1998</span>
+                            <strong>25+ Years</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="cedrick-content">
+                    <h2>The Cedrick Factor</h2>
+                    <p class="tagline">Generational Trust Meets Precision Technology</p>
+                    <p>Cedrick Thomas didn't just inherit a logging operation—he transformed it. Armed with a forestry degree and a vision for sustainable timber, he's spent 25 years proving that advanced technology and environmental stewardship aren't at odds.</p>
+                    <p>"My grandfather taught me to read the forest. Today's LiDAR systems let me understand it at the molecular level. But the mission remains the same: leave this land better than we found it."</p>
+                    <div class="cedrick-values">
+                        <div class="value-card">
+                            <div class="value-icon">🎯</div>
+                            <div class="value-text">
+                                <h4>Precision First</h4>
+                                <p>Data-driven decisions for every harvest</p>
+                            </div>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">🌍</div>
+                            <div class="value-text">
+                                <h4>ESG Committed</h4>
+                                <p>Full transparency in every operation</p>
+                            </div>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">🏗️</div>
+                            <div class="value-text">
+                                <h4>Mass Timber Ready</h4>
+                                <p>CLT-grade timber for modern builds</p>
+                            </div>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">🤝</div>
+                            <div class="value-text">
+                                <h4>Personal Service</h4>
+                                <p>Direct access to Cedrick himself</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn-primary" style="margin-top: 2rem;">Contact Cedrick</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landowner Harvest Estimator Tool -->
+    <section class="harvest-estimator section" id="harvest-estimator">
+        <div class="container">
+            <div class="section-header">
+                <h2>Landowner Harvest Estimator</h2>
+                <p>Get a preliminary estimate of your timber value. Our GIS team will provide a detailed assessment after an initial survey.</p>
+            </div>
+            <div class="estimator-grid">
+                <form class="estimator-form" id="estimatorForm" novalidate>
+                    <h3 style="margin-bottom: 1.5rem;">Enter Your Property Details</h3>
+                    <div class="form-group">
+                        <label for="est-acres">Total Forested Acres</label>
+                        <input type="number" id="est-acres" placeholder="e.g., 100" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-species">Dominant Species</label>
+                        <select id="est-species" required>
+                            <option value="">Select primary species</option>
+                            <option value="pine">Pine / Softwood</option>
+                            <option value="oak">Oak / Red Oak</option>
+                            <option value="maple">Maple / Birch</option>
+                            <option value="mixed">Mixed Hardwood</option>
+                            <option value="walnut">Walnut / Cherry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-age">Average Stand Age (years)</label>
+                        <input type="number" id="est-age" placeholder="e.g., 40" min="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="est-access">Road Access Quality</label>
+                        <select id="est-access" required>
+                            <option value="">Select access type</option>
+                            <option value="excellent">Excellent (Paved to property)</option>
+                            <option value="good">Good (Gravel roads)</option>
+                            <option value="moderate">Moderate (Seasonal access)</option>
+                            <option value="limited">Limited (Trail only)</option>
+                        </select>
+                    </div>
+                    <button class="calculate-btn" id="estimateBtn" type="submit">Get Preliminary Estimate</button>
+                </form>
+                <div class="estimator-result" id="estimator-result">
+                    <div class="result-header">
+                        <h3>Your Harvest Estimate</h3>
+                        <p>Based on industry averages and your inputs</p>
+                    </div>
+                    <div class="estimate-breakdown">
+                        <div class="estimate-row">
+                            <span class="estimate-label">Estimated Board Feet</span>
+                            <span class="estimate-value" id="est-bf">--</span>
+                        </div>
+                        <div class="estimate-row">
+                            <span class="estimate-label">Timber Value Range</span>
+                            <span class="estimate-value" id="est-timber">--</span>
+                        </div>
+                        <div class="estimate-row">
+                            <span class="estimate-label">Potential Carbon Credits</span>
+                            <span class="estimate-value" id="est-carbon">--</span>
+                        </div>
+                        <div class="estimate-row">
+                            <span class="estimate-label">Total Estimated Value</span>
+                            <span class="estimate-value" id="est-total">--</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.875rem; margin-top: 1.5rem; opacity: 0.8;">* Estimates are preliminary. A GIS survey will provide accurate valuations.</p>
+                    <a href="#contact" class="btn-primary" style="margin-top: 1rem; display: inline-block; background: var(--accent-orange); border-color: var(--accent-orange);">Schedule GIS Survey</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="testimonials section" id="testimonials">
         <div class="container">
@@ -1243,10 +1854,10 @@
     <!-- CTA Section -->
     <section class="cta-section section" id="contact">
         <div class="container">
-            <h2>Ready to Transform Your Forest Assets?</h2>
-            <p>Whether you're a landowner seeking to maximize sustainable value or a buyer sourcing certified timber, our team is ready to help.</p>
+            <h2>Ready to Maximize Your Forest's Potential?</h2>
+            <p>Whether you own land seeking sustainable stewardship or you're a buyer sourcing certified Mass Timber, Cedrick Thomas and his team are ready to help.</p>
             <div class="cta-buttons">
-                <a href="mailto:contact@cedricklogging.com" class="btn-primary">Schedule Consultation</a>
+                <a href="mailto:cedrick@cedricklogging.com" class="btn-primary">Contact Cedrick</a>
                 <a href="tel:+18005551234" class="btn-secondary">Call (800) 555-1234</a>
             </div>
         </div>
@@ -1261,45 +1872,45 @@
                         <div class="logo-icon">CL</div>
                         <div>
                             <div class="logo-text" style="color: var(--white);">Cedrick Logging</div>
-                            <div class="logo-tagline">Tech-Stewardship Forestry</div>
+                            <div class="logo-tagline">The Cedrick Thomas Standard</div>
                         </div>
                     </a>
-                    <p>Pioneering sustainable forestry through advanced technology and responsible land stewardship since 1998.</p>
+                    <p>From Seedling to Solution. Pioneering sustainable forestry through precision technology and responsible land stewardship since 1998.</p>
                 </div>
                 <div class="footer-column">
-                    <h4>For Landowners</h4>
+                    <h4>I Own Land</h4>
                     <ul>
-                        <li><a href="#">Forest Assessment</a></li>
-                        <li><a href="#">GIS Mapping</a></li>
-                        <li><a href="#">Carbon Credits</a></li>
-                        <li><a href="#">Harvest Planning</a></li>
+                        <li><a href="#harvest-estimator">Harvest Estimator</a></li>
+                        <li><a href="#mapping">GIS Mapping</a></li>
+                        <li><a href="#carbon">Carbon Credits</a></li>
+                        <li><a href="#stewardship">Stewardship Hub</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>For Buyers</h4>
+                    <h4>I Buy Lumber</h4>
                     <ul>
+                        <li><a href="#services">Mass Timber / CLT</a></li>
                         <li><a href="#">Timber Inventory</a></li>
-                        <li><a href="#">Certification Docs</a></li>
+                        <li><a href="#">Chain of Custody</a></li>
                         <li><a href="#">Volume Pricing</a></li>
-                        <li><a href="#">Delivery Options</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About C. Thomas</a></li>
-                        <li><a href="#">Our Technology</a></li>
+                        <li><a href="#about">About Cedrick Thomas</a></li>
+                        <li><a href="#process">Our Technology</a></li>
                         <li><a href="#">ESG Report</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Cedrick Logging. Owner: C. Thomas. All rights reserved.</p>
+                <p>&copy; 2024 Cedrick Logging. Owner: Cedrick Thomas. All rights reserved.</p>
                 <div class="certifications">
-                    <span class="cert-badge">FSC Certified</span>
-                    <span class="cert-badge">SFI Member</span>
-                    <span class="cert-badge">Carbon Verified</span>
+                    <span class="cert-badge">SFI Certified</span>
+                    <span class="cert-badge">PEFC Endorsed</span>
+                    <span class="cert-badge">FSC Chain of Custody</span>
                 </div>
             </div>
         </div>
@@ -1425,6 +2036,77 @@
 
         // Carbon Calculator form submission handler
         document.getElementById('carbonForm').addEventListener('submit', calculateCarbon);
+
+        // Harvest Estimator Logic
+        function calculateHarvestEstimate(event) {
+            if (event) event.preventDefault();
+            
+            const acres = parseFloat(document.getElementById('est-acres').value) || 0;
+            const species = document.getElementById('est-species').value;
+            const age = parseFloat(document.getElementById('est-age').value) || 0;
+            const access = document.getElementById('est-access').value;
+
+            if (acres <= 0 || !species || age <= 0 || !access) {
+                alert('Please fill in all fields to get an estimate.');
+                return;
+            }
+
+            // Board feet per acre estimates by species and age
+            const bfPerAcre = {
+                'pine': { base: 8000, ageMultiplier: 1.0 },
+                'oak': { base: 6000, ageMultiplier: 1.2 },
+                'maple': { base: 5500, ageMultiplier: 1.1 },
+                'mixed': { base: 6500, ageMultiplier: 1.05 },
+                'walnut': { base: 4000, ageMultiplier: 1.5 }
+            };
+
+            // Price per board foot by species
+            const pricePerBF = {
+                'pine': 0.35,
+                'oak': 0.55,
+                'maple': 0.50,
+                'mixed': 0.45,
+                'walnut': 1.25
+            };
+
+            // Access discount factors
+            const accessFactors = {
+                'excellent': 1.0,
+                'good': 0.95,
+                'moderate': 0.85,
+                'limited': 0.70
+            };
+
+            // Age factor (optimal harvest at 40-60 years)
+            let ageFactor = 1;
+            if (age < 30) ageFactor = 0.6;
+            else if (age < 40) ageFactor = 0.85;
+            else if (age <= 60) ageFactor = 1.0;
+            else if (age <= 80) ageFactor = 0.95;
+            else ageFactor = 0.85;
+
+            const speciesData = bfPerAcre[species];
+            const totalBF = Math.round(acres * speciesData.base * ageFactor * speciesData.ageMultiplier);
+            const accessFactor = accessFactors[access];
+            
+            const timberValueLow = Math.round(totalBF * pricePerBF[species] * accessFactor * 0.85);
+            const timberValueHigh = Math.round(totalBF * pricePerBF[species] * accessFactor * 1.15);
+            
+            // Carbon credit estimate ($15-25 per ton CO2, ~2.5 tons per acre per year)
+            const carbonCredits = Math.round(acres * 2.5 * 20);
+            
+            const totalLow = timberValueLow + carbonCredits;
+            const totalHigh = timberValueHigh + carbonCredits;
+
+            // Display results
+            document.getElementById('est-bf').textContent = totalBF.toLocaleString() + ' BF';
+            document.getElementById('est-timber').textContent = '$' + timberValueLow.toLocaleString() + ' - $' + timberValueHigh.toLocaleString();
+            document.getElementById('est-carbon').textContent = '$' + carbonCredits.toLocaleString() + '/year';
+            document.getElementById('est-total').textContent = '$' + totalLow.toLocaleString() + ' - $' + totalHigh.toLocaleString();
+        }
+
+        // Harvest Estimator form submission handler
+        document.getElementById('estimatorForm').addEventListener('submit', calculateHarvestEstimate);
     </script>
 </body>
 </html>
